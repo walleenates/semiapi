@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    background-color: #292b2c;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app img {
+    max-width: 100%;
+    height: auto;
+    max-height: 80px; /* Adjust the max-height as needed */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1 {
+    color: #61dafb;
+    margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.search {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input {
+    padding: 12px;
+    margin-right: 8px;
+    border: 2px solid #61dafb;
+    border-radius: 6px;
+    flex-grow: 1; /* Take up remaining space */
+    color: #292b2c;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #61dafb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+    margin-right: 10px ;
+}
+
+button:hover {
+    background-color: #007BFF; /* Change color on hover */
+}
+
+/* Add margin to the right of the Search input */
+button + input {
+    margin-right: 8px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Center the movie cards horizontally */
+    align-items: stretch; /* Align movie cards to stretch vertically */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.movie-card {
+    background-color: #343a40;
+    border: 2px solid #61dafb;
+    padding: 20px;
+    margin: 20px;
+    width: calc(25% - 40px);
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.2s ease-in-out; /* Add a smooth hover effect */
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.movie-card img {
+    max-width: 100%;
+    height: auto;
+    max-height: 250px; /* Adjusted the max-height to make it a bit bigger */
+    margin-bottom: 10px;
+    border-radius: 10px; /* Added border-radius for a rounded look */
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover img {
+    transform: scale(1.1); /* Increase size on hover */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+}
+
+.movie-details h1 {
+    margin-bottom: 10px; /* Add some margin to the bottom of the title */
+    max-height: 40px; /* Set a maximum height for the title */
+    overflow: hidden; /* Hide any overflow beyond the maximum height */
+    font-size: 20px; /* Adjusted font size */
+}
+
+.empty {
+    color: #dc3545;
+}
+
+.movie-details-popup {
+    background-color: #292b2c;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    z-index: 2000;
+    border-radius: 10px;
 }
